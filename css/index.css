@@ -1,0 +1,154 @@
+html {
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-image: url("../imgs/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-blend-mode: color-burn;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: auto;
+}
+
+/*estilos para el header*/
+nav{
+    display: flex;
+    min-width: 100%;
+    height: 20%;
+    background-color: rgba(39, 34, 34, 0.74);
+    justify-content: center;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    justify-items: center;
+    align-items: center;
+    padding: 2%;
+    gap: 1rem;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 166, 0, 0.37);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+a:hover{
+    background-color: rgba(143, 130, 105, 0.37);;
+}
+/*agregar underline al a de los li del menu para que se vea en el hover*/
+nav ul li a{
+    position: relative;
+}
+
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+nav ul li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/*configurar fluides y color del scroll*/
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgba(255, 166, 0, 0.37);
+    border-radius: 5px;
+}
+
+/*media query para volver flex colum el menu en un tamaño menor a 499px*/
+@media screen and (max-width: 500px){
+    nav, ul{
+        flex-direction: column;
+    }
+}
+
+/*estilos para el main*/
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    gap: 1rem;
+}
+
+/*estilos para el contactanos*/
+.contactanos{
+    display: flex;
+    min-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+form{
+    display: flex;
+    padding: 2%;
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 166, 0, 0.37);
+    border-radius: 2rem;
+}
+
+.form-text{
+    display: flex;
+}
+
+input{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+button{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    background-color: rgba(255, 166, 0, 0.37);
+    cursor: pointer;
+}
+
+/*estilos para el footer*/
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    background-color: rgba(39, 34, 34, 0.74);
+}
+/*acomodar tamaño a imagen de ejemplo*/
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 3px solid white;
+}
