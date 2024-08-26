@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My pc webpage</title>
     <link rel="stylesheet" href="css/index.css">
-    <script src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"defer></script>
 </head>
 <body>
     <header>
-        <nav>
+        <nav id="nav">
             <ul>
                 <li><a href="">Inicio</a></li>
                 <li><a href="#sobreNosotros">Sobre nosotros</a></li>
@@ -29,33 +29,113 @@
         </section>
         <!--Servicio que ofrecemos-->
         <section class="servicio" id="servicio">
-            <h1>¿Como funciona my pc?</h1>
-            <p>Nuestra app web permite guardar en tu computadora o dispositivo sin necesidad de iniciar session o registrarse de manera local, toda la informacion necesaria de cada componente que deseas objeter ademas agrega un total de cuando valdria este producto junto con los links de donde encontraste cada componente</p>
-            <img src="./imgs/mypc img.JPG" alt="img de app">
+            <h1>¿Cómo funciona MyPC?</h1>
+    <p>Nuestra aplicación web es fácil de usar y no requiere que inicies sesión ni te registres. Simplemente agrega los componentes que te interesan y nuestra herramienta calculará automáticamente el valor total de tu PC deseada. Además, puedes guardar los enlaces a los componentes para futuras referencias.</p>
+    <p>Características destacadas:</p>
+    <ul>
+        <li>Guardar y comparar componentes fácilmente.</li>
+        <li>Calcular el costo total de tu PC personalizada.</li>
+        <li>Acceso rápido a enlaces de tiendas donde encontraste los componentes.</li>
+    </ul>
+            <img id="mypc-image"  src="./imgs/mypc img.JPG" alt="img de app">
+            <br>
             <div>
                 <span>PRESIONA: <a href="https://scorhenao.github.io/My-pc/">AQUI</a> PARA USARLA!</span>
             </div>
-
-        </section>
-        <!--Contactanos-->
-        <section class="contactanos" id="contactanos">
-            <h1>Contactanos</h1>
-            <div class="form-text">
-                <p>Si tienes alguna pregunta o dudas no dudes en contactarnos</p>
+            <!--Contactanos-->
+            <section class="contactanos" id="contactanos">
+                <h1>Contactanos</h1>
+                <h3>Si tienes alguna pregunta o dudas no dudes en contactarnos</h3>
                 <form>
-                        <input type="text" placeholder="Nombre">
-                        <input type="email" placeholder="Email">
-                        <input type="text" placeholder="Asunto">
-                        <input type="text" placeholder="Mensaje">
+                        <input type="text" placeholder="Nombre:">
+                        <input type="email" placeholder="Email:">
+                        <input type="text" placeholder="Asunto:">
+                        <textarea name="mensaje" id="mensaje" placeholder="mensaje:"></textarea>
                         <button>Enviar</button>
                 </form>
-            </div>
+            </section>
+
         </section>
+        <!--Sponsores-->
+        <div class="slider-container">
+            <div class="slider">
+                <img src="./imgs/sponsor1.png" class="microsoft-sponsor" alt="Sponsor 1">
+                <img src="./imgs/sponsor2.png" class="github-sponsor" alt="Sponsor 2">
+                <img src="./imgs/sponsor3.png" class="adidas-sponsor" alt="Sponsor 3">
+                <img src="./imgs/sponsor4.png" class="logitech-sponsor" alt="Sponsor 4">
+                <img src="./imgs/sponsor5.webp" class="samsung-sponsor" alt="Sponsor 5">
+                <!-- Repetir las imágenes para un efecto continuo -->
+                <img src="./imgs/sponsor1.png" class="microsoft-sponsor"  alt="Sponsor 1">
+                <img src="./imgs/sponsor2.png" class="github-sponsor" alt="Sponsor 2">
+                <img src="./imgs/sponsor3.png" class="adidas-sponsor" alt="Sponsor 3">
+                <img src="./imgs/sponsor4.png" class="logitech-sponsor" alt="Sponsor 4">
+                <img src="./imgs/sponsor5.webp" class="samsung-sponsor" alt="Sponsor 5">
+            </div>
+        </div>
+        <!--Mapa de contacto-->
+        <div class="contact-map-container">
+            <h2>¿Donde nos ubicamos?</h2>
+            <div class="map-wrapper">
+                <iframe                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1980.5263084894426!2d-75.58051417522944!3d6.255693780142175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44283300000001%3A0x40a442a0e118f92a!2sPlaza%20Minorista%20Jos%C3%A9%20Mar%C3%ADa%20Villa!5e0!3m2!1sen!2sco!4v1694532359305!5m2!1sen!2sco"
+                ></iframe>
+            </div>
+            <p>Encuentra los creadores de myPc Plaza Minorista José María Villa, Medellín, Colombia.</p>
+        </div>
     </main>
 
+    <!-- Botón con imagen -->
+    <button id="helpBtn">
+        <img src="./imgs/helpIcon.png" alt="Help" />
+    </button>
+
+    <!--modal con imagen de dudas e inquietudes que al click muestre formulario de ayuda-->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Help Form</h2>
+            <form>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <footer>
-        <h4>MyPc</h4>
-        <p>Copyright &copy; 2024</p>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h1>¿Quiénes somos en MyPC?</h1>
+                <p>En MyPC, somos un equipo apasionado por la tecnología que busca transformar la forma en que planificas y construyes tu PC ideal. Nuestro objetivo es ofrecerte una herramienta intuitiva y eficiente que te permita personalizar tu equipo de acuerdo a tus necesidades y presupuesto.</p>
+                <p>Con años de experiencia en la industria tecnológica, nos dedicamos a mejorar continuamente nuestra aplicación para brindarte la mejor experiencia posible. Creemos que la tecnología debería ser accesible y fácil de usar para todos, y trabajamos arduamente para hacer esto una realidad.</p>
+                <h2>¿Alguna vez te has preguntado cuánto valdría tu PC deseada?</h2>
+                <p>Con MyPC, puedes calcular el valor total de tu PC deseada y comparar precios de componentes en diferentes tiendas. Así, puedes tomar decisiones informadas y ahorrar tiempo y dinero en el proceso de construcción.</p>
+                <h2>¿Te gustaría recordar dónde viste un componente?</h2>
+                <p>Nuestra herramienta te permite guardar enlaces a componentes que encuentres y acceder a ellos fácilmente más tarde. Nunca más perderás de vista una buena oferta o un componente que te haya interesado.</p>
+            </div>
+            <div class="footer-section links">
+                <h4>Volver al menu</h4>
+                <ul>
+                    <li><a href="#nav">Inicio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h4>Contacto</h4>
+                <p>Email:</p>
+                <a href="mailto:samcorhenao@gmail.com">samcorhenao@gmail.com</a>
+                <p>Teléfono: +57 311 336 9669 </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MyPC. Todos los derechos reservados.</p>
+        </div>
     </footer>
+    
 </body>
 </html>
